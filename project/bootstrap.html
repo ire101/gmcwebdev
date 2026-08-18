@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizWhiz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: darkolivegreen;
+            color: bisque;
+            font-family: Garamond, serif;
+            line-height: 1.5;
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: rgb(108, 137, 56);
+            color: beige;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: solid 1px khaki;
+            max-width: 1000px;
+            margin: auto;
+            padding: 16px 24px;
+        }
+
+        #left-nav {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            ul{
+                display: flex;
+                list-style-type: none;
+                
+                a{
+                    text-decoration: none;
+                    color: darkolivegreen;
+                    font-weight: 600;
+                    padding: 6px 12px;
+                    background-color: darkseagreen;
+                    border: 2px solid bisque;
+                    border-radius: 8px;
+                    transition: all 0.4s ease-in-out;
+                }
+                a:hover{
+                    color: springgreen;
+                    background-color: bisque;
+                    text-decoration: wavy;
+                }
+                a.active{
+                    color: darkolivegreen;
+                    background-color: bisque;
+                }
+            }
+
+            #logo{
+                font-size: 20px;
+                font-weight: bold;
+                color: darkolivegreen;
+            }
+        }
+
+        #right-nav {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            
+            p{
+                background-color: darkseagreen;
+                border: 2px solid bisque;
+                padding: 6px 12px;
+                color: darkolivegreen;
+                font-weight: bold;
+                font-size: 14px;
+                border-radius: 20px;
+            }
+
+            #avatar{
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                border: 2px solid bisque;
+                object-fit: cover;
+            }
+        }
+
+@media(max-width:600px){
+    body{
+        flex-direction: column;
+        background-color: darkolivegreen;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <section id="left-nav">
+            <h2 id="logo">QuizWhiz</h2>
+            <nav id="nav">
+                <ul>
+                    <a class="active" href="#"><li>Home</li></a>
+                    <a href="#"><li>Ranks</li></a>
+                    <a href="#"><li>Profile</li></a>
+                </ul>
+            </nav>
+        </section>
+
+        <section id="right-nav">
+            <p>Lvl 12 ~ 450 coins</p>
+            <img id="avatar" src="https://i.pravatar.cc/100?img=12" alt="user image">
+        </section>
+    </header>
+
+    <section id="hero" class="text-center">
+        <h3>Welcome to QuizWhiz!</h3>
+        <p>Are you ready?</p>
+        <img style="border-radius: 5px;" width="100%" src="gamepad.jpg" alt="gamepad">
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

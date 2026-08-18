@@ -1,0 +1,60 @@
+body {
+    background-color: darkslategrey;
+    color: aliceblue;
+    font-family: Georgia, serif;
+    line-height: 1.6;
+    margin: 10px;
+    border: 2.5px double;
+}
+
+header{
+    color:azure;
+}
+
+header p,
+footer p {
+    margin: 5px 0;
+}
+
+header,
+footer {
+    margin-bottom: 10px;
+}
+
+header div,
+footer div {
+    margin-bottom: 10px;
+}
+
+main {
+    margin-top: 10px;
+}
+
+nav{
+    background-color: darkslategray;
+    border: 2px solid cadetblue;
+    border-radius: 5px;
+    padding: 4px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    
+}
+
+a {
+    color: lightblue;
+    text-decoration: none;
+}
+
+a nav:hover{
+    color: darkgrey;
+    text-decoration: wavy;
+}
+
+
