@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuizWhiz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
         body {
             background-color: darkolivegreen;
@@ -13,7 +15,7 @@
             line-height: 1.5;
         }
 
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -28,6 +30,9 @@
             max-width: 1000px;
             margin: auto;
             padding: 16px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         #left-nav {
@@ -35,11 +40,11 @@
             align-items: center;
             gap: 12px;
 
-            ul{
+            ul {
                 display: flex;
                 list-style-type: none;
-                
-                a{
+
+                a {
                     text-decoration: none;
                     color: darkolivegreen;
                     font-weight: 600;
@@ -49,18 +54,20 @@
                     border-radius: 8px;
                     transition: all 0.4s ease-in-out;
                 }
-                a:hover{
+
+                a:hover {
                     color: springgreen;
                     background-color: bisque;
                     text-decoration: wavy;
                 }
-                a.active{
+
+                a.active {
                     color: darkolivegreen;
                     background-color: bisque;
                 }
             }
 
-            #logo{
+            #logo {
                 font-size: 20px;
                 font-weight: bold;
                 color: darkolivegreen;
@@ -71,8 +78,8 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            
-            p{
+
+            p {
                 background-color: darkseagreen;
                 border: 2px solid bisque;
                 padding: 6px 12px;
@@ -82,7 +89,7 @@
                 border-radius: 20px;
             }
 
-            #avatar{
+            #avatar {
                 width: 40px;
                 height: 40px;
                 border-radius: 50%;
@@ -91,12 +98,15 @@
             }
         }
 
-@media(max-width:600px){
-    body{
-        flex-direction: column;
-        background-color: darkolivegreen;
-    }
-}
+
+
+
+        @media(max-width:600px) {
+            body {
+                flex-direction: column;
+                background-color: darkolivegreen;
+            }
+        }
     </style>
 </head>
 
@@ -106,24 +116,98 @@
             <h2 id="logo">QuizWhiz</h2>
             <nav id="nav">
                 <ul>
-                    <a class="active" href="#"><li>Home</li></a>
-                    <a href="#"><li>Ranks</li></a>
-                    <a href="#"><li>Profile</li></a>
+                    <a class="active" href="#">
+                        <li>Home</li>
+                    </a>
+                    <a href="#">
+                        <li>Ranks</li>
+                    </a>
+                    <a href="#">
+                        <li>Profile</li>
+                    </a>
                 </ul>
             </nav>
         </section>
 
         <section id="right-nav">
-            <p>Lvl 12 ~ 450 coins</p>
+            <p>Lvl 12 • 450 coins</p>
             <img id="avatar" src="https://i.pravatar.cc/100?img=12" alt="user image">
         </section>
     </header>
 
-    <section id="hero" class="text-center">
+    <div class="container py-4" id="hero" class="text-center" style="max-width: 800px;">
         <h3>Welcome to QuizWhiz!</h3>
-        <p>Are you ready?</p>
-        <img style="border-radius: 5px;" width="100%" src="gamepad.jpg" alt="gamepad">
+        <p class="lead">Are you ready?</p>
+    </div>
+
+    <div class="container shadow-sm rounded-5 overflow-hidden mb-4" style="max-width: 800px;">
+        <div class="progress rounded-0 bg-secondary" style="height: 8px;">
+            <div class="progress-bar bg-success" role="progressbar" style="width: 30%;"></div>
+        </div>
+        <div class="position-relative">
+            <img style="border-radius: 5px;" width="100%" src="gamepad.jpg" alt="gamepad" class="card-img-top"
+                style="height: 230px; object-fit: cover;">
+            <section class="position-absolute bottom-0 start-0 end-0 p-3 fw-bold"
+                style="background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);">
+                <p class="badge bg-success-subtle rounded-pill p-2 mb-2 text-success-emphasis">Featured Quiz</p>
+                <h4 class="fw-semibold">Journey through the Forbidden Forest</h4>
+                <p class="small mb-0">
+                    <i class="bi bi-clock"></i> 10 minutes • 15 questions
+                </p>
+            </section>
+        </div>
+    </div>
+
+    <section
+        class="d-flex flex-column gap-3 p-4 justify-content-between mt-5 flex-md-row bg-success mx-auto  text-light rounded-3 bg-opacity-50"
+        style="max-width: 800px;">
+        <main class=" d-flex gap-3 align-items-center">
+            <div class="bg-light px-2 rounded">
+                <i class="bi bi-fire text-danger fs-1"></i>
+            </div>
+
+            <div>
+                <h5 class="mb-0  display">Daily Brain Teaser</h5>
+                <p class="">Solve today's puzzle to earn 50 bonus points</p>
+            </div>
+        </main>
+        <div>
+            <button type="button" class="btn btn-light btn-outline-success-emphasis w-100">Play Now</button>
+        </div>
     </section>
+
+    <section class="container d-flex justify-content-between mt-4 align-items-center">
+        <div>
+            <h4>Explore Categories</h4>
+        </div>
+        <div>
+            <p class="fw-semibold text-success-subtle">View All</p>
+        </div>
+    </section>
+
+    <main class="row container gap-2 my-4 column">
+        <section class="d-flex flex-column align-items-center text-success rounded-4 border border-1 border-secondary border-opacity-50 p-2 py-4 bg-light bg-opacity-50 col-6">
+            <div class="bg-info-subtle p-2 rounded-pill">🔬</div>
+            <p>Science</p>
+        </section>
+
+        <section class="d-flex flex-column align-items-center text-success rounded-4 border border-1 border-secondary border-opacity-50 p-2 py-4 bg-light bg-opacity-50 col-6">
+            <div class="bg-warning-subtle p-2 rounded-pill">📜</div>
+            <p>History</p>
+        </section>
+
+        <section class="d-flex flex-column align-items-center text-success rounded-4 border border-1 border-secondary border-opacity-50 p-2 py-4 bg-light bg-opacity-50 col-6">
+            <div class="bg-danger-subtle p-2 rounded-pill">💻</div>
+            <p>Technology</p>
+        </section>
+
+        <section class="d-flex flex-column align-items-center text-success rounded-4 border border-1 border-secondary border-opacity-50 p-2 py-4 bg-light bg-opacity-50 col-6">
+            <div class="bg-success-subtle p-2 rounded-pill">🎨</div>
+            <p>Art</p>
+        </section>
+    </main>
+
+
 </body>
 
 </html>
