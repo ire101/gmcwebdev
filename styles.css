@@ -1,7 +1,7 @@
 body {
     background-color: darkslategrey;
     color: aliceblue;
-    font-family: Georgia, serif;
+    font-family: Roboto;
     line-height: 1.6;
     margin: 10px;
     border: 2.5px double;
@@ -44,7 +44,7 @@ nav ul {
     gap: 20px;
     padding: 0;
     margin: 0;
-    
+    text: inline
 }
 
 a {
