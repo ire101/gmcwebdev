@@ -1,0 +1,34 @@
+Variables
+    car        : character      // current character read
+    longueur   : integer = 0    // length counter
+    mots       : integer = 0    // word counter
+    voyelles   : integer = 0    // vowel counter
+
+Begin
+    Write("Enter a sentence ending with a period: ")
+    Read(car)
+
+    While car <> '.' Do
+        longueur := longueur + 1
+
+        If car = ' ' Then
+            mots := mots + 1
+        EndIf
+
+        If car in {'a','e','i','o','u','A','E','I','O','U'} Then
+            voyelles := voyelles + 1
+        EndIf
+
+        Read(car)
+    EndWhile
+
+    // Account for the period itself in the length
+    longueur := longueur + 1
+
+    // Number of words = number of spaces + 1 (last word has no trailing space)
+    mots := mots + 1
+
+    Write("Length of the sentence: ", longueur)
+    Write("Number of words: ", mots)
+    Write("Number of vowels: ", voyelles)
+End

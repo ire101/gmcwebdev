@@ -186,42 +186,120 @@
     </section>
 
     <main class="row container gap-2 my-4 column">
-        <section class="d-flex flex-column align-items-center text-success rounded-4 border border-1 border-secondary border-opacity-50 p-2 py-4 bg-light bg-opacity-50 col-6">
+        <section
+            class="d-flex flex-column align-items-center text-success rounded-4 border border-1 border-secondary border-opacity-50 p-2 py-4 bg-light bg-opacity-50 col-6">
             <div class="bg-info-subtle p-2 rounded-pill">🔬</div>
             <p>Science</p>
         </section>
 
-        <section class="d-flex flex-column align-items-center text-success rounded-4 border border-1 border-secondary border-opacity-50 p-2 py-4 bg-light bg-opacity-50 col-6">
+        <section
+            class="d-flex flex-column align-items-center text-success rounded-4 border border-1 border-secondary border-opacity-50 p-2 py-4 bg-light bg-opacity-50 col-6">
             <div class="bg-warning-subtle p-2 rounded-pill">📜</div>
             <p>History</p>
         </section>
 
-        <section class="d-flex flex-column align-items-center text-success rounded-4 border border-1 border-secondary border-opacity-50 p-2 py-4 bg-light bg-opacity-50 col-6">
+        <section
+            class="d-flex flex-column align-items-center text-success rounded-4 border border-1 border-secondary border-opacity-50 p-2 py-4 bg-light bg-opacity-50 col-6">
             <div class="bg-danger-subtle p-2 rounded-pill">💻</div>
             <p>Technology</p>
         </section>
 
-        <section class="d-flex flex-column align-items-center text-success rounded-4 border border-1 border-secondary border-opacity-50 p-2 py-4 bg-light bg-opacity-50 col-6">
+        <section
+            class="d-flex flex-column align-items-center text-success rounded-4 border border-1 border-secondary border-opacity-50 p-2 py-4 bg-light bg-opacity-50 col-6">
             <div class="bg-success-subtle p-2 rounded-pill">🎨</div>
             <p>Art</p>
         </section>
     </main>
 
-    <nav class="d-flex flex-row gap-3 p-4 justify-content-between mt-5 flex-md-row bg-success-subtle mx-auto  text-light rounded-3 bg-opacity-50"
+    <section>
+        <div class="modal-header justify-content-between">
+            <button class="btn bg-success-subtle rounded-circle">
+                <i class="bi bi-x-lg"></i>
+            </button>
+
+            <h4 class="fw-bold text-secondary mb-0">QuizWhiz</h4>
+
+            <p class="badge bg-success-subtle p-2 text-center rounded-pill fw-semibold mb-0">
+                <i>Lvl 12</i>
+            </p>
+        </div>
+
+        <main class="p-4">
+            <span class="d-flex justify-content-between">
+                <p
+                    class="badge bg-success-subtle text-secondary-emphasis p-2 text-center rounded-pill fw-semibold mb-0">
+                    Question 4 of 10</p>
+
+                <p class="badge bg-danger-subtle p-2 mb-0 rounded-pill text-secondary">
+                    <i class="bi bi-clock m-1"> 00:12</i>
+                </p>
+            </span>
+
+            <div class="card-rounded-4">
+                <div class="progress rounded-0 bg-secondary-subtle" style="height: 8px;">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 30%;" aria-valuenow="40"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+
+                <div class="card-body text-center bg-light-subtle">
+                    <p class="bg-success-subtle text-success-emphasis p-2 rounded-pill">Astronomy</p>
+                    <h4 class="fw-bold mb-4">What is the largest body in our solar system?</h4>
+
+                    <div class="row gap-3">
+                        <div class="col-12 col-md-6">
+                            <button
+                                class="btn btn-outline-secondary w-100 text-start d-flex p-2 justify-content-between">
+                                <p class="mb-0 fw-bold text-success">A. Mars</p>
+                                <span class="border border-2 rounded-circle" style="width: 20px; height: 20px;"></span>
+                            </button>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <button
+                                class="btn btn-outline-secondary w-100 text-start d-flex p-2 justify-content-between">
+                                <p class="mb-0 fw-bold text-success">B. Venus</p>
+                                <span class="border border-2 rounded-circle" style="width: 20px; height: 20px;"></span>
+                            </button>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <button
+                                class="btn btn-outline-secondary w-100 text-start d-flex p-2 justify-content-between">
+                                <p class="mb-0 fw-bold text-success">C. Jupiter</p>
+                                <span class="border border-2 rounded-circle" style="width: 20px; height: 20px;"></span>
+                            </button>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <button
+                                class="btn btn-outline-secondary w-100 text-start d-flex p-2 justify-content-between">
+                                <p class="mb-0 fw-bold text-success">D. Earth</p>
+                                <span class="border border-2 rounded-circle" style="width: 20px; height: 20px;"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+    </section>
+
+    <nav class="d-flex display-9 flex-row gap-3 p-3 justify-content-between mt-5 flex-md-row bg-success-subtle mx-auto  text-light rounded-3 bg-opacity-50"
         style="max-width: 800px;">
-        <section class="d-flex flex-row align-items-center text-success rounded-4 border border-1 border-secondary border-opacity-50 p-2 bg-light bg-opacity-50 col-3">
-            <div class="bg-info-subtle p-2 rounded-pill">🔬</div>
-            <p>Home</p>
+        <section class="d-flex flex-column align-items-center text-success rounded-5 p-2 bg-light bg-opacity-50 col-3">
+            <div class="bg-info-subtle p-2 rounded-pill">🏠</div>
+            <p><b>Home</b></p>
         </section>
 
-        <section class="d-flex flex-row align-items-center text-success rounded-4 border border-1 border-secondary border-opacity-50 p-2 bg-light bg-opacity-50 col-3">
-            <div class="bg-warning-subtle p-2 rounded-pill">📜</div>
-            <p>Ranks</p>
+        <section class="d-flex flex-column align-items-center text-success rounded-5 p-2 bg-light bg-opacity-50 col-3">
+            <div class="bg-warning-subtle p-2 rounded-pill">❔</div>
+            <p><b>Quiz</b></p>
         </section>
 
-        <section class="d-flex flex-row align-items center text-success rounded-4 border border-1 border-secondary border-opacity-50 p-2 bg-light bg-opacity-50 col-3">
-            <div class="bg-danger-subtle p-2 rounded-pill">💻</div>
-            <p>Profile</p>
+        <section class="d-flex flex-column align-items-center text-success rounded-5 p-2 bg-light bg-opacity-50 col-3">
+            <div class="bg-danger-subtle p-2 rounded-pill">⚙️</div>
+            <p><b>Settings</b></p>
         </section>
     </nav>
 
