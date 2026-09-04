@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Greystone Homes</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg: #f2f2f0;
+        --surface: #ffffff;
+        --ink: #232324;
+        --muted: #68686c;
+        --border: #dcdcd8;
+        --charcoal: #2e2e32;
+        --charcoal-2: #47474c;
+        --stone: #b9b9b4;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: var(--bg);
+        color: var(--ink);
+        font-family: "Inter", sans-serif;
+      }
+
+      h1, h2, h3, h4 {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      /* ---------- Nav ---------- */
+      .navbar {
+        background-color: var(--charcoal) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .brand-mark {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #fff;
+        font-family: "Fraunces", serif;
+        font-size: 1.25rem;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .brand-mark .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: var(--stone);
+        display: inline-block;
+      }
+
+      .nav-link {
+        color: rgba(255, 255, 255, 0.75) !important;
+      }
+
+      .nav-link:hover {
+        color: #fff !important;
+      }
+
+      /* ---------- Hero ---------- */
+      .hero {
+        background-color: var(--charcoal-2);
+        color: #fff;
+        padding: 5rem 0 7rem;
+      }
+
+      .hero h1 {
+        font-size: 2.75rem;
+        max-width: 14ch;
+      }
+
+      .hero p {
+        max-width: 55ch;
+        color: rgba(255, 255, 255, 0.78);
+      }
+
+      /* ---------- Search bar ---------- */
+      .search-panel {
+        background-color: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 1.25rem;
+        margin-top: -4.5rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .search-panel input {
+        border: 1px solid var(--border);
+        background-color: var(--bg);
+      }
+
+      .search-panel input:focus {
+        border-color: var(--charcoal-2);
+        box-shadow: 0 0 0 0.15rem rgba(46, 46, 50, 0.15);
+      }
+
+      .btn-charcoal {
+        background-color: var(--charcoal);
+        border: 1px solid var(--charcoal);
+        color: #fff;
+      }
+
+      .btn-charcoal:hover {
+        background-color: var(--charcoal-2);
+        border-color: var(--charcoal-2);
+        color: #fff;
+      }
+
+      .btn-outline-charcoal {
+        background-color: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        color: #fff;
+      }
+
+      .btn-outline-charcoal:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+      }
+
+      /* ---------- Listings ---------- */
+      .section-heading {
+        border-left: 3px solid var(--charcoal-2);
+        padding-left: 0.75rem;
+      }
+
+      #results-count {
+        color: var(--muted);
+      }
+
+      .house-card {
+        background-color: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+        width: 100%;
+        max-width: 340px;
+      }
+
+      .house-card img {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .house-price {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 1.15rem;
+        margin: 0;
+      }
+
+      .house-tag {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.55rem;
+        border-radius: 4px;
+        background-color: var(--bg);
+        border: 1px solid var(--border);
+        color: var(--muted);
+      }
+
+      .house-meta {
+        color: var(--muted);
+        font-size: 0.875rem;
+      }
+
+      .house-meta span:not(:last-child)::after {
+        content: "·";
+        margin: 0 0.4rem;
+      }
+
+      .no-results {
+        color: var(--muted);
+      }
+
+      /* ---------- About ---------- */
+      .about {
+        background-color: var(--charcoal);
+        color: #fff;
+      }
+
+      .about img {
+        width: 100%;
+        max-width: 420px;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+
+      /* ---------- Footer ---------- */
+      footer {
+        background-color: var(--charcoal);
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      footer .bi {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      footer a:hover .bi {
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar sticky-top navbar-expand-sm navbar-dark">
+      <div class="container-fluid">
+        <a class="brand-mark" href="#hero">
+          <span class="dot"></span>
+          Greystone Homes
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mynavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mynavbar">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#listings">Listings</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About us</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- hero -->
+    <div id="hero" class="hero">
+      <div class="container">
+        <h1>A house that fits how you actually live.</h1>
+        <p class="lead">
+          Browse verified homes for sale and for rent across Nigeria. Filter by
+          name or location and see the details that matter before you book a
+          viewing.
+        </p>
+      </div>
+    </div>
+
+    <main class="container">
+      <!-- search -->
+      <div class="search-panel">
+        <form id="searchForm" class="row g-2 align-items-center">
+          <div class="col-12 col-md-8">
+            <input
+              id="searchInput"
+              type="text"
+              class="form-control"
+              placeholder="Search by house name or location, e.g. Lekki"
+              autocomplete="off"
+            />
+          </div>
+          <div class="col-6 col-md-2">
+            <button type="submit" class="btn btn-charcoal w-100">Search</button>
+          </div>
+          <div class="col-6 col-md-2">
+            <button id="clearBtn" type="button" class="btn btn-outline-secondary w-100">
+              Clear
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="py-5">
+        <h2 class="section-heading">Homes available now</h2>
+        <p id="results-count" class="mb-4"></p>
+
+        <section id="listings" class="row gap-4 justify-content-center">
+          <!-- house cards injected here -->
+        </section>
+      </div>
+    </main>
+
+    <section id="about" class="about d-flex flex-wrap p-5 gap-4">
+      <span class="flex-grow-1" style="min-width: 260px">
+        <h3>About us</h3>
+        <p class="lead">Homes chosen with care</p>
+        <p class="small" style="max-width: 60ch">
+          Greystone Homes connects buyers and tenants with vetted properties
+          across Nigeria. Founded in 2026, we work directly with homeowners
+          and agents to list accurate details, fair prices and real photos,
+          so you can shortlist a home with confidence before you ever visit.
+        </p>
+      </span>
+      <img
+        src="https://images.unsplash.com/photo-1434082033009-b81d41d32e1c?auto=format&fit=crop&w=420&h=280&q=80"
+        alt="A white wooden house set among trees"
+      />
+    </section>
+
+    <footer class="py-4">
+      <div class="container d-flex flex-wrap justify-content-between align-items-center">
+        <span>© 2026 Greystone Homes</span>
+        <div class="d-flex gap-4">
+          <a href="javascript:void(0)"><i class="bi bi-twitter"></i></a>
+          <a href="javascript:void(0)"><i class="bi bi-facebook"></i></a>
+          <a href="javascript:void(0)"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const houses = [
+        {
+          id: 1,
+          image: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=600&h=400&q=80",
+          name: "The Lekki Courtyard",
+          type: "4-Bedroom Detached Duplex",
+          description:
+            "A modern duplex with an open-plan living area, private courtyard and a paved compound for two cars.",
+          price: 185000000,
+          location: "Lekki, Lagos",
+          bedrooms: 4,
+          bathrooms: 5,
+          area: 320,
+          listingType: "For Sale",
+        },
+        {
+          id: 2,
+          image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&h=400&q=80",
+          name: "Maitama Garden Flat",
+          type: "3-Bedroom Apartment",
+          description:
+            "A quiet, well-serviced apartment with a shared garden, backup power and secure parking.",
+          price: 3200000,
+          location: "Maitama, Abuja",
+          bedrooms: 3,
+          bathrooms: 3,
+          area: 180,
+          listingType: "For Rent",
+        },
+        {
+          id: 3,
+          image: "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&w=600&h=400&q=80",
+          name: "Old GRA Bungalow",
+          type: "3-Bedroom Bungalow",
+          description:
+            "A classic bungalow on a tree-lined street, recently renovated with new fittings throughout.",
+          price: 62000000,
+          location: "Old GRA, Port Harcourt",
+          bedrooms: 3,
+          bathrooms: 3,
+          area: 210,
+          listingType: "For Sale",
+        },
+        {
+          id: 4,
+          image: "https://images.unsplash.com/photo-1598228723793-52759bba239c?auto=format&fit=crop&w=600&h=400&q=80",
+          name: "Chevron Drive Terrace",
+          type: "3-Bedroom Terrace House",
+          description:
+            "Part of a gated terrace row with a shared pool, 24-hour security and a small backyard.",
+          price: 2400000,
+          location: "Lekki, Lagos",
+          bedrooms: 3,
+          bathrooms: 4,
+          area: 195,
+          listingType: "For Rent",
+        },
+        {
+          id: 5,
+          image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&h=400&q=80",
+          name: "Asokoro Hilltop House",
+          type: "5-Bedroom Detached House",
+          description:
+            "A spacious family home with a study, staff quarters and a view over the surrounding hills.",
+          price: 260000000,
+          location: "Asokoro, Abuja",
+          bedrooms: 5,
+          bathrooms: 6,
+          area: 410,
+          listingType: "For Sale",
+        },
+        {
+          id: 6,
+          image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=600&h=400&q=80",
+          name: "Ikoyi Riverside Flat",
+          type: "2-Bedroom Apartment",
+          description:
+            "A compact riverside flat with floor-to-ceiling windows and access to a residents' gym.",
+          price: 4500000,
+          location: "Ikoyi, Lagos",
+          bedrooms: 2,
+          bathrooms: 2,
+          area: 130,
+          listingType: "For Rent",
+        },
+        {
+          id: 7,
+          image: "https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=600&h=400&q=80",
+          name: "Independence Layout Duplex",
+          type: "4-Bedroom Semi-Detached Duplex",
+          description:
+            "A family-friendly duplex close to schools and markets, with a fitted kitchen and boys' quarters.",
+          price: 95000000,
+          location: "Independence Layout, Enugu",
+          bedrooms: 4,
+          bathrooms: 5,
+          area: 280,
+          listingType: "For Sale",
+        },
+        {
+          id: 8,
+          image: "https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?auto=format&fit=crop&w=600&h=400&q=80",
+          name: "GRA Phase 2 Cottage",
+          type: "2-Bedroom Cottage",
+          description:
+            "A cosy, low-maintenance cottage set back from the road with a private front garden.",
+          price: 1500000,
+          location: "GRA Phase 2, Port Harcourt",
+          bedrooms: 2,
+          bathrooms: 2,
+          area: 110,
+          listingType: "For Rent",
+        },
+        {
+          id: 9,
+          image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=600&h=400&q=80",
+          name: "Banana Island Villa",
+          type: "6-Bedroom Waterfront Villa",
+          description:
+            "A statement waterfront villa with a private jetty, home cinema and staff wing.",
+          price: 950000000,
+          location: "Banana Island, Lagos",
+          bedrooms: 6,
+          bathrooms: 8,
+          area: 650,
+          listingType: "For Sale",
+        },
+        {
+          id: 10,
+          image: "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?auto=format&fit=crop&w=600&h=400&q=80",
+          name: "Jabi Lakeview Flat",
+          type: "3-Bedroom Apartment",
+          description:
+            "A bright apartment overlooking Jabi Lake, with a balcony and dedicated parking.",
+          price: 3800000,
+          location: "Jabi, Abuja",
+          bedrooms: 3,
+          bathrooms: 3,
+          area: 170,
+          listingType: "For Rent",
+        },
+      ];
+
+      const listingsEl = document.getElementById("listings");
+      const resultsCountEl = document.getElementById("results-count");
+      const searchForm = document.getElementById("searchForm");
+      const searchInput = document.getElementById("searchInput");
+      const clearBtn = document.getElementById("clearBtn");
+
+      function formatPrice(amount, listingType) {
+        const formatted = "₦" + amount.toLocaleString("en-NG");
+        return listingType === "For Rent" ? formatted + " / year" : formatted;
+      }
+
+      function renderHouses(list) {
+        listingsEl.innerHTML = "";
+
+        if (list.length === 0) {
+          listingsEl.innerHTML =
+            '<p class="no-results">No homes match that search. Try a different name or location.</p>';
+          resultsCountEl.textContent = "";
+          return;
+        }
+
+        resultsCountEl.textContent =
+          list.length + (list.length === 1 ? " home found" : " homes found");
+
+        for (const house of list) {
+          const card = document.createElement("div");
+          card.className = "house-card";
+          card.innerHTML = `
+            <img src="${house.image}" alt="${house.name}" />
+            <div class="p-3">
+              <div class="d-flex justify-content-between align-items-start gap-2">
+                <p class="house-price">${formatPrice(house.price, house.listingType)}</p>
+                <span class="house-tag">${house.listingType}</span>
+              </div>
+              <h4 class="h5 mb-1">${house.name}</h4>
+              <p class="house-meta mb-2">
+                <span>${house.type}</span>
+                <span>${house.location}</span>
+              </p>
+              <p class="small mb-2">${house.description}</p>
+              <p class="house-meta mb-0">
+                <span>${house.bedrooms} bed</span>
+                <span>${house.bathrooms} bath</span>
+                <span>${house.area} m²</span>
+              </p>
+            </div>
+          `;
+          listingsEl.appendChild(card);
+        }
+      }
+
+      function searchHouses(query) {
+        const q = query.trim().toLowerCase();
+        if (q === "") {
+          return houses;
+        }
+        return houses.filter(
+          (house) =>
+            house.name.toLowerCase().includes(q) ||
+            house.location.toLowerCase().includes(q) ||
+            house.type.toLowerCase().includes(q)
+        );
+      }
+
+      searchForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        renderHouses(searchHouses(searchInput.value));
+      });
+
+      clearBtn.addEventListener("click", () => {
+        searchInput.value = "";
+        renderHouses(houses);
+        searchInput.focus();
+      });
+
+      // initial render
+      renderHouses(houses);
+    </script>
+  </body>
+</html>
